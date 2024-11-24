@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+      defaultHref="/"
+      text=""
+      color="dark">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/menu']">
+        <ion-icon 
+          slot="end" 
+          name="home-outline" 
+          id="titulo"
+          color="dark">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Clases</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Botones superiores -->
+  <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+    <ion-button (click)="actualizarClases()">Actualizar Lista</ion-button>
+    <ion-button color="primary" (click)="irACrearClase()">Crear Clase</ion-button>
+  </div>
+
+  <!-- Lista de clases -->
+  <ion-list *ngIf="clases.length > 0">
+    <ion-item *ngFor="let clase of clases">
+      <!-- Contenedor de la clase -->
+      <ion-card>
+        <!-- Información de la clase -->
+        <ion-card-header>
+          <ion-card-title>Asignatura: {{ clase.asignatura }}</ion-card-title>
+          <ion-card-subtitle>ID: {{ clase.id }}</ion-card-subtitle>
+        </ion-card-header>
+
+        <!-- Contenido de la clase -->
+        <ion-card-content>
+          <p>Horario: {{ clase.horario }}</p>
+          <ion-button size="small" slot="end" (click)="gestionarAsistencia(clase.id)">Asistencia</ion-button>
+          <ion-button size="small" slot="end" (click)="gestionarJustificaciones(clase.id)">Justificaciones</ion-button>
+          <br>
+          <ion-button size="small" slot="end" color="success" (click)="abrirCamara(clase.id)">QR</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <!-- Mensaje si no hay clases -->
+  <ion-text *ngIf="clases.length === 0" color="medium">
+    <p>No hay clases disponibles. Presiona "Actualizar Lista".</p>
+  </ion-text>
+</ion-content>

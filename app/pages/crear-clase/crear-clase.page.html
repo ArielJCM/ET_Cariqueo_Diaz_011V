@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>crear-clase</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="claseForm" (ngSubmit)="crearClase()">
+    <ion-item>
+      <ion-label position="floating">ID de la Clase</ion-label>
+      <ion-input type="text" formControlName="id"></ion-input>
+    </ion-item>
+    <div *ngIf="claseForm.get('id')?.invalid && claseForm.get('id')?.touched">
+      <ion-text color="danger">El ID es obligatorio.</ion-text>
+    </div>
+    <ion-item>
+      <ion-label position="floating">Asignatura</ion-label>
+      <ion-input type="text" formControlName="asignatura"></ion-input>
+    </ion-item>
+    <div *ngIf="claseForm.get('asignatura')?.invalid && claseForm.get('asignatura')?.touched">
+      <ion-text color="danger">La asignatura es obligatoria.</ion-text>
+    </div>
+    <ion-item>
+      <ion-label position="floating">Horario</ion-label>
+      <ion-input type="text" formControlName="horario"></ion-input>
+    </ion-item>
+    <div *ngIf="claseForm.get('horario')?.invalid && claseForm.get('horario')?.touched">
+      <ion-text color="danger">El horario es obligatorio.</ion-text>
+    </div>
+    <ion-button expand="block" type="submit" [disabled]="claseForm.invalid">
+      Crear Clase
+    </ion-button>
+  </form>
+</ion-content>

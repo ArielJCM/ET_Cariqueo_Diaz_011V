@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+      defaultHref="/"
+      text=""
+      color="dark">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/menu']">
+        <ion-icon 
+          slot="end" 
+          name="home-outline" 
+          id="titulo"
+          color="dark">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>justificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="justificaciones && justificaciones.length > 0">
+    <ion-item *ngFor="let justificacion of justificaciones">
+      <ion-label>
+        <h2>{{ justificacion.nombre }}</h2>
+        <p>{{ justificacion.justificacion }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-text *ngIf="justificaciones.length === 0" color="medium">
+    <p>No hay justificaciones registradas para esta clase.</p>
+  </ion-text>
+</ion-content>

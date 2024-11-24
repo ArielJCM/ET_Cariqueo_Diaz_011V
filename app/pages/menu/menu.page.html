@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" id="titulo"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title id="titulo" >Menu Principal</ion-title>
+  </ion-toolbar> 
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-img src="assets/fotos/Logo_final.png"></ion-img>
+  </ion-card>
+  <div style="margin-top: 30px; text-align: center;">
+    <ion-button size="large" [routerLink]="['/clases']" color="dark">Clases</ion-button>
+  </div>
+</ion-content>

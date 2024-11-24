@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+      defaultHref="/"
+      text=""
+      color="dark">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/menu']">
+        <ion-icon 
+          slot="end" 
+          name="home-outline" 
+          id="titulo"
+          color="dark">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Asistentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="asistentes && asistentes.length > 0">
+    <ion-item *ngFor="let asistente of asistentes">
+      <ion-label>
+        <h2>{{ asistente.nombre }}</h2>
+        <p>{{ asistente.correo }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-text *ngIf="asistentes.length === 0" color="medium">
+    <p>No hay asistentes registrados para esta clase.</p>
+  </ion-text>
+</ion-content>

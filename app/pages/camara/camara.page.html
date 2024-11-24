@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+      defaultHref="/"
+      text=""
+      color="dark">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/menu']">
+        <ion-icon 
+          slot="end" 
+          name="home-outline" 
+          id="titulo"
+          color="dark">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Clases</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <ion-button color="primary" (click)="iniciarEscaneo()">Iniciar Escaneo</ion-button>
+  </div>
+  <ion-text *ngIf="mensaje" color="success">
+    <p>{{ mensaje }}</p>
+  </ion-text>
+  <ion-text *ngIf="error" color="danger">
+    <p>{{ error }}</p>
+  </ion-text>
+  <div id="qr-cam-container">
+    <div #qrScannerContainer></div>
+  </div>
+</ion-content>
