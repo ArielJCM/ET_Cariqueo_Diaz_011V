@@ -58,4 +58,7 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('userId');
   }
+  recuperarContrasena(email: string): Observable<any> {
+    return this.httpclient.post<any>(`${this.apiUrl}/recuperar-contrasena`, { email });
+  }
 }

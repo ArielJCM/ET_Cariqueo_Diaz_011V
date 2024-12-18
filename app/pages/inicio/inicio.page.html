@@ -1,5 +1,4 @@
-<ion-header [translucent]="true">
-</ion-header>
+<ion-header [translucent]="true"></ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-card style="margin-top: 50%;">
@@ -37,6 +36,11 @@
           Iniciar Sesión
         </ion-button>
       </form>
+      <ion-text color="primary">
+        <p (click)="recuperarContrasena()" style="text-align: center; margin-top: 15px; cursor: pointer;">
+          ¿Olvidaste tu contraseña?
+        </p>
+      </ion-text>
     </ion-card-content>
   </ion-card>
 </ion-content>

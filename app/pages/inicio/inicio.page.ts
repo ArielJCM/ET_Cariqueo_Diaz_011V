@@ -35,4 +35,23 @@ export class InicioPage {
       });
     }
   }
+
+  recuperarContrasena() {
+    const email = this.loginForm.get('email')?.value;
+
+    if (!email || !this.loginForm.get('email')?.valid) {
+      alert('Por favor, ingrese un correo válido.');
+      return;
+    }
+
+    this.authService.recuperarContrasena(email).subscribe(
+      () => {
+        alert('Se ha enviado un correo para recuperar la contraseña.');
+      },
+      (error) => {
+        console.error('Error al enviar correo:', error);
+        alert('No se pudo enviar el correo. Intente nuevamente más tarde.');
+      }
+    );
+  }
 }
