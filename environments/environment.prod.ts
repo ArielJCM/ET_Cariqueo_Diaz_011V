@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl:'http://localhost:3000'
+  apiUrl:'https://et-cariqueo-diaz-011v.onrender.com/'
 };
