@@ -7,7 +7,7 @@ import { Clase } from 'src/interfaces/users';
   providedIn: 'root',
 })
 export class ClaseService {
-  private apiUrl = 'http://localhost:3000/clases';
+  private apiUrl = 'https://et-cariqueo-diaz-011v.onrender.com/clases';
 
   constructor(private http: HttpClient) {}
 

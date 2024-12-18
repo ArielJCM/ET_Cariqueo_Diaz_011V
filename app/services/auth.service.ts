@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000'; 
+  private apiUrl = 'https://et-cariqueo-diaz-011v.onrender.com/'; 
 
   constructor(private httpclient: HttpClient) { }
 
