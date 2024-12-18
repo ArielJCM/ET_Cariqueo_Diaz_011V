@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:'https://et-cariqueo-diaz-011v.onrender.com/'
+  apiUrl:'https://et-cariqueo-diaz-011v.onrender.com'
 };
 
 /*
