@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://et-cariqueo-diaz-011v.onrender.com'; 
+  private apiUrl = 'https://restdata011v-1-l4jl.onrender.com'; 
 
   constructor(private httpclient: HttpClient) { }
 
